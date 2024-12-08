@@ -12,7 +12,7 @@ set(TEST_NAME UnitTest)
 
 #--------------------------------------------------------------------------------------------------
 # project
-project(${LIB_NAME} VERSION ${PROJECT_VESRION})
+project(${PROJECT_NAME} VERSION ${PROJECT_VESRION})
 
 #--------------------------------------------------------------------------------------------------
 # builds
