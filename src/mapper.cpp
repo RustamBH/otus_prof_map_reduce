@@ -7,10 +7,10 @@
 int main(int argc, char ** argv)
 {
     std::string line;	
-	std::string item;
-	char delimiter = ',';
+    std::string item;
+    char delimiter = ',';
     std::stringstream string_stream;
-	std::size_t column = 9; // price
+    std::size_t column = 9; // price
 
     // Map
     //std::vector<int> map_output;
