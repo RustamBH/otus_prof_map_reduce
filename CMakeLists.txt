@@ -7,7 +7,7 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 # variables
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/test)
-set(PROJECT_NAME map_reduce)
+set(PROJECT_NAME MapReduce)
 set(TEST_NAME UnitTest)
 
 #--------------------------------------------------------------------------------------------------
