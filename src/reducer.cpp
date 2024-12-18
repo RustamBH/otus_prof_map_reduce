@@ -8,13 +8,13 @@
 double mean_eval(double& sum, const std::size_t& price, const std::size_t& count)
 {
 	sum += price;
-	return count > 0: sum / count ? 0;    
+	return count > 0 ? sum / count : 0;    
 }
 
 double stddev_eval(double& diff_sum, const double& mean, const std::size_t& price, const std::size_t& count)
 {
 	diff_sum += ((price - mean) * (price - mean));
-	return count > 0: sqrt(diff_sum / count) ? 0;
+	return count > 0 ? sqrt(diff_sum / count) : 0;
 }
 
 int main(int argc, char ** argv)
