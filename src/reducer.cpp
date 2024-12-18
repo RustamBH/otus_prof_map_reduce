@@ -5,13 +5,13 @@
 #include <cmath>
 
 
-double mean_eval(const double& sum, const std::size_t& price, const std::size_t& count)
+double mean_eval(double& sum, const std::size_t& price, const std::size_t& count)
 {
 	sum += price;
 	return count > 0: sum / count ? 0;    
 }
 
-double stddev_eval(const double& diff_sum, const double& mean, const std::size_t& price, const std::size_t& count)
+double stddev_eval(double& diff_sum, const double& mean, const std::size_t& price, const std::size_t& count)
 {
 	diff_sum += ((price - mean) * (price - mean));
 	return count > 0: sqrt(diff_sum / count) ? 0;
