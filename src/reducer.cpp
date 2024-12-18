@@ -5,34 +5,33 @@
 #include <cmath>
 
 
-double mean_eval(const std::vector<int>& m_out) {
-    return std::accumulate(m_out.begin(), m_out.end(), 0.0) / m_out.size();
+double mean_eval(const double& sum, const std::size_t& price, const std::size_t& count)
+{	
+	sum += price;
+	return count > 0: sum / count ? 0;    
 }
 
-double stddev_eval(const std::vector<int>& m_out) {
-    double diff_sum = 0;
-    double m = mean_eval(m_out);
-    for (auto it = m_out.begin(); it != m_out.end(); ++it)
-        diff_sum += ((*it - m) * (*it - m));
-
-    return sqrt(diff_sum / m_out.size());
+double stddev_eval(const double& diff_sum, const double& mean, const std::size_t& price, const std::size_t& count)
+{    
+	diff_sum += ((price - mean) * (price - mean));
+	return count > 0: sqrt(diff_sum / count) ? 0;
 }
 
 int main(int argc, char ** argv)
 {
     std::string line;
-    // Map
-    std::vector<int> map_output;
+    // Map   
+	std::size_t count = 0;
+	double mean = 0;	
+	double sum = 0;
+	double diff_sum = 0;
     while (std::getline(std::cin, line))
-    {
-        map_output.emplace_back(std::stoi(line));
-    }
-
-    // Calculate mean value
-    std::cout << "mean: " << mean_eval(map_output) << std::endl;
-
-    // Calculate standard deviation
-    std::cout << "std_dev: " << stddev_eval(map_output) << std::endl;
-
+    {        
+		std::size_t price = std::stoi(line);
+		count++;
+		mean = mean_eval(sum, price, count);		
+		std::cout << "mean: " << mean_eval(sum, price, count) << std::endl;
+		std::cout << "std_dev: " << stddev_eval(diff_sum, mean, price, count) << std::endl;
+    }	
     return 0;
 }
