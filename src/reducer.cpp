@@ -13,8 +13,7 @@ double mean_eval(double& sum, const int& price, const std::size_t& count)
 
 double disp_eval(double& diff_sum, const double& mean, const int& price, const std::size_t& count)
 {
-	diff_sum += ((price - mean) * (price - mean));
-	//return count > 0 ? sqrt(diff_sum / count) : 0;
+	diff_sum += ((price - mean) * (price - mean));	
 	return count > 0 ? diff_sum / count : 0;
 }
 
