@@ -30,7 +30,7 @@ int main(int argc, char ** argv)
 		std::size_t price = std::stoi(line);
 		count++;
 		mean = mean_eval(sum, price, count);		
-		std::cout << "mean: " << mean_eval(sum, price, count) << std::endl;
+		std::cout << "mean: " << mean << std::endl;
 		std::cout << "std_dev: " << stddev_eval(diff_sum, mean, price, count) << std::endl;
 	}	
 	return 0;
