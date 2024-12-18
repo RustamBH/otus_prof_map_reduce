@@ -27,11 +27,13 @@ int main(int argc, char ** argv)
 	double diff_sum = 0;
 	while (std::getline(std::cin, line))
 	{        
-		int price = std::stoi(line);
-		count++;
-		mean = mean_eval(sum, price, count);		
-		std::cout << "mean: " << mean << std::endl;
-		std::cout << "disp: " << disp_eval(diff_sum, mean, price, count - 1) << std::endl;
+	   int price = std::stoi(line);
+	   if (price >=0){
+	      count++;
+	      mean = mean_eval(sum, price, count);		
+	      std::cout << "mean: " << mean << std::endl;
+	      std::cout << "disp: " << disp_eval(diff_sum, mean, price, count - 1) << std::endl;
+	   }
 	}	
 	return 0;
 }
